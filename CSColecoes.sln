@@ -13,13 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayMetodos", "ArrayMetodo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercicioArray", "ExercicioArray\ExercicioArray.csproj", "{E0B662B2-A524-413F-8CC7-43F1C07767CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModificadorParametros", "ModificadorParametros\ModificadorParametros.csproj", "{E85E8ED8-9370-4443-8D27-369B77F5CB35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModificadorParametros", "ModificadorParametros\ModificadorParametros.csproj", "{E85E8ED8-9370-4443-8D27-369B77F5CB35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayMultidimensional", "ArrayMultidimensional\ArrayMultidimensional.csproj", "{6ED78E73-06F8-4871-9A4F-CB2761B7D7EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayMultidimensional", "ArrayMultidimensional\ArrayMultidimensional.csproj", "{6ED78E73-06F8-4871-9A4F-CB2761B7D7EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercicioArray2", "ExercicioArray2\ExercicioArray2.csproj", "{D01935AD-418A-4D9D-8386-0B2FDCEA65F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercicioArray2", "ExercicioArray2\ExercicioArray2.csproj", "{D01935AD-418A-4D9D-8386-0B2FDCEA65F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayList", "ArrayList\ArrayList.csproj", "{57171B78-69FF-4149-B7C7-46AC7AB4F5A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayList", "ArrayList\ArrayList.csproj", "{57171B78-69FF-4149-B7C7-46AC7AB4F5A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayList_2", "ArrayList_2\ArrayList_2.csproj", "{8437CCEF-883B-4D7A-BEAC-5B398C0DB9D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{57171B78-69FF-4149-B7C7-46AC7AB4F5A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57171B78-69FF-4149-B7C7-46AC7AB4F5A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57171B78-69FF-4149-B7C7-46AC7AB4F5A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8437CCEF-883B-4D7A-BEAC-5B398C0DB9D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8437CCEF-883B-4D7A-BEAC-5B398C0DB9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8437CCEF-883B-4D7A-BEAC-5B398C0DB9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8437CCEF-883B-4D7A-BEAC-5B398C0DB9D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
