@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.ComponentModel;
 
 Console.WriteLine("Exercícios\n ");
 
@@ -85,39 +86,96 @@ Console.WriteLine("Exercícios\n ");
 //Console.WriteLine($"\nA média aritmética do grupo 1 => {totalGrupo1/grupo1.Length}\nA média aritmética do grupo 2 => {totalGrupo2 / grupo2.Length}\n");
 
 //4)
-ArrayList pessoas = new ArrayList();
-Pessoa pessoa = new Pessoa();
-Pessoa pessoa1 = new Pessoa();
-Pessoa pessoa2 = new Pessoa();
+//ArrayList pessoas = new ArrayList();
 
-Console.WriteLine("Insira o nome da pessoa: ");
-pessoa.Nome = Console.ReadLine();
-Console.WriteLine("Insira a idade da pessoa: ");
-pessoa.Idade = Convert.ToInt32(Console.ReadLine());
+//for (int i = 0; i < 3; i++)
+//{
+//    Console.WriteLine("Insira o nome da pessoa: ");
+//    string nome = Console.ReadLine();
+//    Console.WriteLine("Insira a idade da pessoa: ");
+//    int idade = int.Parse(Console.ReadLine());
 
-Console.WriteLine("Insira o nome da pessoa 1: ");
-pessoa1.Nome = Console.ReadLine();
-Console.WriteLine("Insira a idade da pessoa 1: ");
-pessoa1.Idade = Convert.ToInt32(Console.ReadLine());
+//    pessoas.Add(new Pessoa
+//    {
+//        Nome = nome,
+//        Idade = idade,
+//    });
+//}
 
-Console.WriteLine("Insira o nome da pessoa 3: ");
-pessoa2.Nome = Console.ReadLine();
-Console.WriteLine("Insira a idade da pessoa 3: ");
-pessoa2.Idade = Convert.ToInt32(Console.ReadLine());
+//ListaPessoas(pessoas);
 
-pessoa.Exibir();
-pessoa1.Exibir();
-pessoa2.Exibir();
+//Pessoa jaime = new Pessoa() { Nome = "Jaime", Idade = 20 };
+//Pessoa tania = new Pessoa() { Nome = "Tânia", Idade = 18 };
 
-pessoas.Add("Jaime", 20);
+//pessoas.Add(jaime); 
+//pessoas.Add(tania);
+
+//Console.WriteLine("\nLista de pessoas após adicionar Jaime e Tânia: ");
+//ListaPessoas(pessoas);
+
+//pessoas.RemoveAt(4);
+
+//Console.WriteLine("\nLista de pessoas após remover o último elemento: ");
+//ListaPessoas(pessoas);
 
 
-public class Pessoa
+//static void ListaPessoas(ArrayList pessoas)
+//{
+//    Console.WriteLine("Lista de pessoas atuais\n");
+
+//    foreach(Pessoa pessoa in pessoas)
+//    {
+//        Console.WriteLine(pessoa.Exibir());
+//    }
+//}
+
+//public class Pessoa
+//{
+//    public string? Nome;
+//    public int Idade;
+//    public string Exibir()
+//    {
+//        return Nome + " - " + Idade;
+//    }
+//}
+
+////5)5- Dada uma classe Produto contendo duas propriedades : Nome (string) e Preco (decimal). Crie uma lista
+//de objetos do tipo Produto usando os seguinte dados:
+//Clips, R$ 3,95 - Caneta, R$ 5,99 - - Lápis, R$ 4,15 - Estojo, R$ 6,99 e Caderno, R$ 7,55
+//A seguir realize as seguintes operações na lista de objetos Produto criada :
+//1 - Crie um método para exibir a relação de produtos , a soma total dos preços dos produtos, a média do
+//preço dos produtos e a quantidade de produtos na lista
+//2- Inclua na lista o seguinte produto : Mochila, R$ 22,44 e exiba novamente a lista de produtos
+//3- Ordene a lista pelo nome do produto e exiba a lista ordenada
+//4- Obtenha e exiba no console os produtos com preço inferior a R$ 5,00
+//5- Localize na lista o produto com nome Estojo
+
+List<Produto> list = new List<Produto>();
+
+Produto produto = new Produto() { Nome = "Clips", Preco = 3.95m };
+Produto produto1 = new Produto() { Nome = "Caneta", Preco = 5.99m };
+Produto produto2 = new Produto() { Nome = "Lápis", Preco = 4.15m };
+Produto produto3 = new Produto() { Nome = "Estojo", Preco = 6.99m };
+Produto produto4 = new Produto() { Nome = "Caderno", Preco = 7.55m };
+
+list.Add(produto);
+list.Add(produto1);
+list.Add(produto2);
+list.Add(produto3);
+list.Add(produto4);
+
+produto.Exibir();
+produto1.Exibir();
+produto2.Exibir();
+produto3.Exibir();
+produto4.Exibir();
+
+public class Produto
 {
-    public string? Nome;
-    public int Idade;
-    public void Exibir()
+    public string Nome;
+    public decimal Preco;
+    public string Exibir()
     {
-        Console.WriteLine($"Nome: {Nome}\nIdade: {Idade}\n");
+        return Nome + ", R$ " + Preco;  
     }
 }
