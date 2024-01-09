@@ -140,65 +140,146 @@ Console.WriteLine("Exercícios\n ");
 //}
 
 ////5)
-List<Produto> Produtos = new List<Produto>();
+//List<Produto> Produtos = new List<Produto>();
 
-Produto produto = new Produto() { Nome = "Clips", Preco = 3.95m };
-Produto produto1 = new Produto() { Nome = "Caneta", Preco = 5.99m };
-Produto produto2 = new Produto() { Nome = "Lápis", Preco = 4.15m };
-Produto produto3 = new Produto() { Nome = "Estojo", Preco = 6.99m };
-Produto produto4 = new Produto() { Nome = "Caderno", Preco = 7.55m };
+//Produto produto = new Produto() { Nome = "Clips", Preco = 3.95m };
+//Produto produto1 = new Produto() { Nome = "Caneta", Preco = 5.99m };
+//Produto produto2 = new Produto() { Nome = "Lápis", Preco = 4.15m };
+//Produto produto3 = new Produto() { Nome = "Estojo", Preco = 6.99m };
+//Produto produto4 = new Produto() { Nome = "Caderno", Preco = 7.55m };
 
-Produtos.Add(produto);
-Produtos.Add(produto1);
-Produtos.Add(produto2);
-Produtos.Add(produto3);
-Produtos.Add(produto4);
+//Produtos.Add(produto);
+//Produtos.Add(produto1);
+//Produtos.Add(produto2);
+//Produtos.Add(produto3);
+//Produtos.Add(produto4);
 
-Exibir(Produtos);
+//Exibir(Produtos);
 
-//adicionando mochila e exibindo novamente a lista
-Produto mochila = new Produto() { Nome = "Mochila", Preco = 22.44m };
-Produtos.Add(mochila);
+////adicionando mochila e exibindo novamente a lista
+//Produto mochila = new Produto() { Nome = "Mochila", Preco = 22.44m };
+//Produtos.Add(mochila);
 
-Exibir(Produtos);
+//Exibir(Produtos);
 
-//ordenando a lista por nome
-var listaOrdenadaNome = Produtos.OrderBy(n=> n.Nome).ToList();
+////ordenando a lista por nome
+//var listaOrdenadaNome = Produtos.OrderBy(n=> n.Nome).ToList();
 
-Exibir(listaOrdenadaNome);
+//Exibir(listaOrdenadaNome);
 
-//ordenando a lista por preço
-var listaOrdenadaPreco = Produtos.OrderBy(n=> n.Preco).ToList();
+////ordenando a lista por preço
+//var listaOrdenadaPreco = Produtos.OrderBy(n=> n.Preco).ToList();
 
-Exibir(listaOrdenadaPreco);
+//Exibir(listaOrdenadaPreco);
 
-//obtendo e exibindo no console apenas produtos com valor < 5
-var produtosMenor5 = Produtos.FindAll(n => n.Preco < 5).ToList();
+////obtendo e exibindo no console apenas produtos com valor < 5
+//var produtosMenor5 = Produtos.FindAll(n => n.Preco < 5).ToList();
 
-Exibir(produtosMenor5);
+//Exibir(produtosMenor5);
 
-//localizando o produto estojo
-var estojo = Produtos.Find(n => n.Nome.Equals("Estojo"));
+////localizando o produto estojo
+//var estojo = Produtos.Find(n => n.Nome.Equals("Estojo"));
 
-Console.WriteLine($"{estojo.Nome}, R${estojo.Preco}");
+//Console.WriteLine($"{estojo.Nome}, R${estojo.Preco}");
 
-//metodo exibir
-static void Exibir(List<Produto> Produtos)
+////metodo exibir
+//static void Exibir(List<Produto> Produtos)
+//{
+//    decimal precoTotal = 0;
+//    foreach(var item in Produtos)
+//    {
+//        Console.WriteLine($"{item.Nome}, R${item.Preco}");
+//        precoTotal += item.Preco;
+//    }
+//    Console.WriteLine($"A soma total dos preços: {precoTotal}");
+//    Console.WriteLine($"A média dos preços: {precoTotal / Produtos.Count}");
+//    Console.WriteLine($"A quantidade de produtos: {Produtos.Count}\n\n");
+//}
+
+////classe produto
+//public class Produto
+//{
+//    public string Nome;
+//    public decimal Preco;
+//}
+
+//6)
+//List<object> Objetos = new List<object>();
+
+//Objetos.Add(1);
+//Objetos.Add("Maria");
+//Objetos.Add(3.45m);
+//Objetos.Add(new());
+//Objetos.Add(null);
+
+//ProcessaObjetos(Objetos);
+
+//static void ProcessaObjetos(List<object> Objetos)
+//{
+//    foreach (object obj in Objetos)
+//    {
+//        if(obj == null)
+//        {
+//            Console.WriteLine("Tipo Nulo");
+//        }
+//        Console.WriteLine(obj.GetType());
+//    }
+//}
+
+//7)
+Aluno aluno = new Aluno();
+aluno[0] = "João";
+aluno[1] = "Maria";
+aluno[2] = "Carlos";
+aluno[3] = "Ana";
+aluno[4] = "Pedro";
+aluno[5] = "Laura";
+aluno[6] = "Lucas";
+aluno[7] = "Isabela";
+aluno[8] = "Fernando";
+aluno[9] = "Juliana";
+
+string valor0 = aluno[0];
+string valor1 = aluno[1];
+string valor2 = aluno[2];
+string valor3 = aluno[3];
+string valor4 = aluno[4];
+string valor5 = aluno[5];
+string valor6 = aluno[6];
+string valor7 = aluno[7];
+string valor8 = aluno[8];
+string valor9 = aluno[9];
+
+aluno.Exibir();
+
+public class Aluno
 {
-    decimal precoTotal = 0;
-    foreach(var item in Produtos)
+    string[] alunos = new string[10];
+    
+    public void Exibir()
     {
-        Console.WriteLine($"{item.Nome}, R${item.Preco}");
-        precoTotal += item.Preco;
+        for(int i = 0; i < alunos.Length; i++)
+        {
+            Console.WriteLine($"Índice {i} - {alunos[i]}");
+        }
     }
-    Console.WriteLine($"A soma total dos preços: {precoTotal}");
-    Console.WriteLine($"A média dos preços: {precoTotal / Produtos.Count}");
-    Console.WriteLine($"A quantidade de produtos: {Produtos.Count}\n\n");
-}
 
-//classe produto
-public class Produto
-{
-    public string Nome;
-    public decimal Preco;
+    public string this [int i]
+    {
+        get
+        {
+            if (i>= 0 && i <= alunos.Length)
+            {
+                return alunos[i];
+            }
+            return "Erro";
+        }
+        set
+        {
+            if (i >= 0 && i <= alunos.Length)
+            {
+                alunos[i] = value;
+            }
+        }
+    }
 }
