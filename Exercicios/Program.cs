@@ -139,18 +139,8 @@ Console.WriteLine("Exercícios\n ");
 //    }
 //}
 
-////5)5- Dada uma classe Produto contendo duas propriedades : Nome (string) e Preco (decimal). Crie uma lista
-//de objetos do tipo Produto usando os seguinte dados:
-//Clips, R$ 3,95 - Caneta, R$ 5,99 - - Lápis, R$ 4,15 - Estojo, R$ 6,99 e Caderno, R$ 7,55
-//A seguir realize as seguintes operações na lista de objetos Produto criada :
-//1 - Crie um método para exibir a relação de produtos , a soma total dos preços dos produtos, a média do
-//preço dos produtos e a quantidade de produtos na lista
-//2- Inclua na lista o seguinte produto : Mochila, R$ 22,44 e exiba novamente a lista de produtos
-//3- Ordene a lista pelo nome do produto e exiba a lista ordenada
-//4- Obtenha e exiba no console os produtos com preço inferior a R$ 5,00
-//5- Localize na lista o produto com nome Estojo
-
-List<Produto> list = new List<Produto>();
+////5)
+List<Produto> Produtos = new List<Produto>();
 
 Produto produto = new Produto() { Nome = "Clips", Preco = 3.95m };
 Produto produto1 = new Produto() { Nome = "Caneta", Preco = 5.99m };
@@ -158,24 +148,57 @@ Produto produto2 = new Produto() { Nome = "Lápis", Preco = 4.15m };
 Produto produto3 = new Produto() { Nome = "Estojo", Preco = 6.99m };
 Produto produto4 = new Produto() { Nome = "Caderno", Preco = 7.55m };
 
-list.Add(produto);
-list.Add(produto1);
-list.Add(produto2);
-list.Add(produto3);
-list.Add(produto4);
+Produtos.Add(produto);
+Produtos.Add(produto1);
+Produtos.Add(produto2);
+Produtos.Add(produto3);
+Produtos.Add(produto4);
 
-produto.Exibir();
-produto1.Exibir();
-produto2.Exibir();
-produto3.Exibir();
-produto4.Exibir();
+Exibir(Produtos);
 
+//adicionando mochila e exibindo novamente a lista
+Produto mochila = new Produto() { Nome = "Mochila", Preco = 22.44m };
+Produtos.Add(mochila);
+
+Exibir(Produtos);
+
+//ordenando a lista por nome
+var listaOrdenadaNome = Produtos.OrderBy(n=> n.Nome).ToList();
+
+Exibir(listaOrdenadaNome);
+
+//ordenando a lista por preço
+var listaOrdenadaPreco = Produtos.OrderBy(n=> n.Preco).ToList();
+
+Exibir(listaOrdenadaPreco);
+
+//obtendo e exibindo no console apenas produtos com valor < 5
+var produtosMenor5 = Produtos.FindAll(n => n.Preco < 5).ToList();
+
+Exibir(produtosMenor5);
+
+//localizando o produto estojo
+var estojo = Produtos.Find(n => n.Nome.Equals("Estojo"));
+
+Console.WriteLine($"{estojo.Nome}, R${estojo.Preco}");
+
+//metodo exibir
+static void Exibir(List<Produto> Produtos)
+{
+    decimal precoTotal = 0;
+    foreach(var item in Produtos)
+    {
+        Console.WriteLine($"{item.Nome}, R${item.Preco}");
+        precoTotal += item.Preco;
+    }
+    Console.WriteLine($"A soma total dos preços: {precoTotal}");
+    Console.WriteLine($"A média dos preços: {precoTotal / Produtos.Count}");
+    Console.WriteLine($"A quantidade de produtos: {Produtos.Count}\n\n");
+}
+
+//classe produto
 public class Produto
 {
     public string Nome;
     public decimal Preco;
-    public string Exibir()
-    {
-        return Nome + ", R$ " + Preco;  
-    }
 }
